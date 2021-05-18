@@ -45,7 +45,10 @@ return passwordOptions;
 
 }
 
-function getRandom(array){}
+function getRandom(array){
+return array[Math.floor(Math.random() * array.length)]
+
+}
 
 function generatePassword(){
     var options = getUserChoices()
@@ -57,12 +60,31 @@ function generatePassword(){
         possibleCharacters = possibleCharacters.concat(specialCharacters)
         guaranteeCharacters.push(getRandom(specialCharacters))
     }
-
+    if (options.numberChoice){
+        possibleCharacters = possibleCharacters.concat(numbers)
+        guaranteeCharacters.push(getRandom(numbers))
+    }
+    if (options.lowercaseChoice){
+        possibleCharacters = possibleCharacters.concat(lowercase)
+        guaranteeCharacters.push(getRandom(lowercase))
+    }
+    if (options.uppercaseChoice){
+        possibleCharacters = possibleCharacters.concat(uppercase)
+        guaranteeCharacters.push(getRandom(uppercase))
+}
+var finalPassword= ""
+for (var i=0; i<guaranteeCharacters.length; i++){
+    finalPassword+=guaranteeCharacters[Math.floor(Math.random() * guaranteeCharacters.length)]
 
 }
 
+for (var i=0; i<(options.passwordLength-guaranteeCharacters.length); i++){
+    finalPassword+=possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)]
 
+}
 
+return finalPassword
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
