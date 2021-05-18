@@ -6,13 +6,16 @@ var specialCharacters = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", 
 // Start funcionality! Begin with length
 var userchoice = prompt("How many characters would you like in your password?", "please enter a number");
 
-if (userchoice < 8) {
+
+
+if (userchoice < 8 || userchoice > 128) {
     alert("Nope! Must be between 8-128");
+    
+    
 }
-if (userchoice > 128) {
-    alert("Nope! Must be between 8-128");
-}
-else { alert("Please continue");}
+
+
+else { alert("Awesome please continue");
 
 // Which characters would they like to include?
 var userchoiceUC = confirm("Would you like to include uppercase?");
@@ -22,6 +25,9 @@ var userchoiceLC = confirm("Would you like to include lowercase?");
 var userchoiceN = confirm("Would you like to include numbers?");
 
 var userchoiceSC = confirm("Would you like to include special characters?");
+}
+
+
 
 
 
