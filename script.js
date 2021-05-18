@@ -4,6 +4,8 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
 
 // Start funcionality! Begin with length
+
+function getUserChoices(){
 var userchoice = prompt("How many characters would you like in your password?", "please enter a number");
 
 
@@ -25,8 +27,39 @@ var userchoiceLC = confirm("Would you like to include lowercase?");
 var userchoiceN = confirm("Would you like to include numbers?");
 
 var userchoiceSC = confirm("Would you like to include special characters?");
+// Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
+if (!userchoiceUC && !userchoiceLC && !userchoiceN && !userchoiceSC) {
+    alert("No, you must pick one type of character!");
+    return;
 }
 
+}
+var passwordOptions = {
+    passwordLength: userchoice,
+    uppercaseChoice: userchoiceUC,
+    lowercaseChoice: userchoiceLC,
+    numberChoice: userchoiceN,
+    specialCharacterChoice: userchoiceSC
+}
+return passwordOptions;
+
+}
+
+function getRandom(array){}
+
+function generatePassword(){
+    var options = getUserChoices()
+    var results = []
+    var possibleCharacters = []
+    var guaranteeCharacters = []
+
+    if (options.specialCharacterChoice){
+        possibleCharacters = possibleCharacters.concat(specialCharacters)
+        guaranteeCharacters.push(getRandom(specialCharacters))
+    }
+
+
+}
 
 
 
