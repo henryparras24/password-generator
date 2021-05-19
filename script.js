@@ -17,7 +17,7 @@ if (userchoice < 8 || userchoice > 128) {
 }
 
 
-else { alert("Awesome please continue");
+else { alert("Awesome, please continue");
 
 // Which characters would they like to include?
 var userchoiceUC = confirm("Would you like to include uppercase?");
@@ -29,7 +29,7 @@ var userchoiceN = confirm("Would you like to include numbers?");
 var userchoiceSC = confirm("Would you like to include special characters?");
 // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
 if (!userchoiceUC && !userchoiceLC && !userchoiceN && !userchoiceSC) {
-    alert("No, you must pick one type of character!");
+    alert("Nope, you must pick at least one type of character!");
     return;
 }
 
