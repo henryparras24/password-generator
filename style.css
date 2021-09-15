@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background: linear-gradient(45deg, #9ebd13 0%, #008552 100%);
 }
 
 .wrapper {
